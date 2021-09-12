@@ -30,6 +30,7 @@ body {
 }
 
 /* ---------- main section ---------- */
+
 #main {
   width: 100%;
   /* height: 50em; */
@@ -50,10 +51,12 @@ body {
 #main .user_info {
   margin: 0 30px;
 }
+
 #main .user_info .user_name {
   font-family: var(--font);
   font-size: 5em;
 }
+
 #main p {
   font-family: var(--secondary-font);
   font-size: 1.5em;
@@ -64,9 +67,11 @@ body {
   width: 18.5em;
   height: 19.5em;
   margin:0 -30px;
-border: 4px inset rgba(68,192,192,0.53);
+border: 4px inset rgba(143, 170, 170, 0.53);
 border-radius: 0px 40px 0px 40px;
 }
+
+
 
 #main .user_info .btn {
 
@@ -86,14 +91,18 @@ border-radius: 0px 40px 0px 40px;
 }
 
 
+
+
+
 /* ---------- about section ---------- */
 .about {
   width: 100%;
   background: #1a1a1a;
   padding: 6em 0;
 }
+
 .about div{
-  width: 40%;
+  width: 70%;
   flex-direction: column;
   align-items: flex-start;
 }
@@ -104,6 +113,7 @@ border-radius: 0px 40px 0px 40px;
 .about_heading {
   font-size: 6em;
   font-family: var(--font);
+  margin-bottom: 0.3em;
 }
 .about p {
   font-size: 1.4em;
@@ -212,20 +222,18 @@ border-radius: 0px 40px 0px 40px;
   overflow-x: hidden;
 }
 .project_img1{
-  width: 120px;
+  width: 450px;
   position: absolute;
-  left: 150px;
-  top: 100px;
+  left: 70px;
+  top: 30px;
 }
 
 .project_img2{
-  width: 150px;
+  width: 450px;
   position: absolute;
-  left: 150px;
-  top: 620px;
-  border: 2px solid rgba(0,0,0,0.47);
-  border-radius: 5px 10px 6px 5px;
-  filter: brightness(88%);
+  left: 90px;
+  top: 540px;
+
 }
 
 .projects::before,
@@ -329,6 +337,7 @@ border-radius: 0px 40px 0px 40px;
 .projects .container .main_box .box  :is(h1,h2,h3,p) {
   margin-bottom: 0.5em;
 }
+
 /* ---------- courses ---------- */
 
 .courses {
@@ -505,8 +514,8 @@ footer .social_media_icons a:hover i{
 /* ---------- Media Query ---------- */
 @media (max-width: 1120px) {
   #main .user_img img {
-    width: 25em;
-    height: 25em;
+    width: 40em;
+    height: 40em;
   }
   .skills {
     height: 100%;
