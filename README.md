@@ -1,1 +1,1 @@
-# mustafaselimgunaydin.github.io
+# mustafaselimgunaydin.com
