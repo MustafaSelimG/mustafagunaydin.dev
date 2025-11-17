@@ -90,5 +90,63 @@
 
   // Add your javascript here
 
+  /**
+   * Add smooth scroll animations for elements
+   */
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+
+  // Observe all cards and experience items
+  document.querySelectorAll('.card, .experience-item, .education-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+
+  /**
+   * Add typing effect to intro title (optional - can be removed if too flashy)
+   */
+  const introTitle = document.querySelector('.intro-title');
+  if (introTitle) {
+    const text = introTitle.textContent;
+    introTitle.textContent = '';
+    introTitle.style.opacity = '1';
+    
+    let i = 0;
+    const typeWriter = () => {
+      if (i < text.length) {
+        introTitle.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 50);
+      }
+    };
+    
+    // Start typing after a short delay
+    setTimeout(typeWriter, 500);
+  }
+
+  /**
+   * Add parallax effect to hero section
+   */
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const hero = document.querySelector('.cover');
+    if (hero) {
+      hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+      hero.style.opacity = 1 - (scrolled / 500);
+    }
+  });
 
 })();

@@ -59,6 +59,7 @@ html {
 /* Hero (intro) section */
 .intro-title {
     font-weight: 800;
+    opacity: 0;
 }
 
 @-webkit-keyframes animateWave {
@@ -77,6 +78,10 @@ html {
     100% {
         transform: scale(1, 1);
     }
+}
+
+.cover {
+    transition: transform 0.1s ease-out, opacity 0.3s ease-out;
 }
 
 .wave-bg {
@@ -294,5 +299,412 @@ footer a:not(.nav-link) {
 .cv-button:active {
     position: relative;
     top: 1px;
+}
+
+/* Experience section improvements */
+.experience-item {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid #0a1c59;
+}
+
+.experience-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.experience-item ul li {
+    line-height: 1.8;
+    color: #495057;
+}
+
+/* Card improvements */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-bottom: 2px solid #dee2e6;
+}
+
+.card-body {
+    background: #ffffff;
+}
+
+/* Better typography */
+h2, h3, h4, h5 {
+    color: #212529;
+    font-weight: 600;
+}
+
+.text-muted {
+    color: #6c757d !important;
+}
+
+/* Improved spacing */
+.section {
+    padding-bottom: 3rem;
+}
+
+/* Better list styling */
+.list-unstyled li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+/* Skills section improvements */
+.card-body h4 {
+    margin-bottom: 0.5rem;
+    color: #495057;
+}
+
+.card-body ul li strong {
+    color: #212529;
+    font-weight: 600;
+}
+
+/* Project cards */
+.card-body ul {
+    margin-top: 0.5rem;
+}
+
+/* Education section improvements */
+.education-item {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid #0a1c59;
+}
+
+.education-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.fa-graduation-cap {
+    color: #0a1c59;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Cool Animations - Simple but Flashy */
+
+/* Floating animation for social icons */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.social-nav .nav-link {
+    animation: float 3s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+.social-nav .nav-link:nth-child(1) { animation-delay: 0s; }
+.social-nav .nav-link:nth-child(2) { animation-delay: 0.2s; }
+.social-nav .nav-link:nth-child(3) { animation-delay: 0.4s; }
+.social-nav .nav-link:nth-child(4) { animation-delay: 0.6s; }
+.social-nav .nav-link:nth-child(5) { animation-delay: 0.8s; }
+.social-nav .nav-link:nth-child(6) { animation-delay: 1s; }
+
+.social-nav .nav-link:hover {
+    transform: translateY(-5px) scale(1.2);
+    color: #0a1c59 !important;
+}
+
+/* Pulse animation for CV button */
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(10, 28, 89, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(10, 28, 89, 0);
+    }
+}
+
+.cv-button {
+    animation: pulse 2s infinite;
+    transition: all 0.3s ease;
+}
+
+.cv-button:hover {
+    animation: none;
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(10, 28, 89, 0.4);
+}
+
+/* Smooth fade-in for sections */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Card entrance animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.card {
+    animation: slideIn 0.6s ease-out;
+    animation-fill-mode: both;
+}
+
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Rotating icon on hover */
+.card-header i,
+.fab,
+.fas {
+    transition: transform 0.3s ease;
+}
+
+.card:hover .fab,
+.card:hover .fas,
+.card:hover i {
+    transform: rotate(360deg);
+}
+
+/* Shimmer effect on cards */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.card:hover {
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    animation: shimmer 1.5s infinite;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Bounce animation for experience items */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.experience-item:hover {
+    animation: bounce 0.6s ease;
+}
+
+/* Gradient animation for navbar */
+.navbar {
+    transition: all 0.3s ease;
+}
+
+.navbar.fixed-top {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.95) 100%) !important;
+    backdrop-filter: blur(10px);
+}
+
+/* Smooth scroll indicator */
+@keyframes scrollDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+/* Avatar rotation on hover */
+img.avatar {
+    transition: transform 0.5s ease;
+}
+
+img.avatar:hover {
+    transform: rotate(5deg) scale(1.05);
+}
+
+/* Marker animation */
+.marker:after {
+    animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+/* Education icon spin */
+.fa-graduation-cap {
+    transition: transform 0.5s ease;
+}
+
+.education-item:hover .fa-graduation-cap {
+    transform: rotate(15deg) scale(1.1);
+}
+
+/* Skills card hover effect */
+.card:hover .card-header {
+    background: linear-gradient(135deg, #0a1c59 0%, #3c4886 100%);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.card:hover .card-header h3,
+.card:hover .card-header h4 {
+    color: white;
+}
+
+/* Smooth text reveal */
+@keyframes textReveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.intro-title {
+    animation: textReveal 1s ease-out;
+}
+
+/* Navbar link hover effect */
+.nav-link {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #0a1c59;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 80%;
+}
+
+/* Scroll top button animation */
+#scrolltop .btn {
+    transition: all 0.3s ease;
+}
+
+#scrolltop .btn:hover {
+    transform: scale(1.1) rotate(180deg);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Project card image hover effect */
+.card img {
+    transition: transform 0.5s ease;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+/* Smooth background gradient animation */
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.experience-item,
+.education-item {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 5s ease infinite;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+    .experience-item {
+        padding: 1rem;
+    }
+    
+    .card-body {
+        padding: 1rem !important;
+    }
+    
+    .social-nav .nav-link {
+        animation: none;
+    }
+    
+    .card {
+        animation: none;
+    }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
 
